@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_form_builder: ^9.2.1
   flutter_countdown_timer: ^4.1.0
+  material_design_icons_flutter: ^7.0.7296
 
 dev_dependencies:
   flutter_test:
