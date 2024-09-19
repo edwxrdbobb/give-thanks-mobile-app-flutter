@@ -127,43 +127,47 @@ class _SignUp1State extends State<SignUp1> {
                             },
                           ),
                         ),
+
+                        //The next button
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            SizedBox(
+                              width: 150,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ConfirmOtp()),
+                                  );
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor:
+                                      Colors.orangeAccent, // Gold color
+                                  minimumSize: const Size(
+                                      200, 50), // Specific width and height
+                                ),
+                                child: const Text(
+                                  'Next',
+                                  style: TextStyle(
+                                    color: Colors.black, // White text color
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 70,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      width: 100,
-                      height: 50,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ConfirmOtp()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          backgroundColor: Colors.orangeAccent, // Gold color
-                          minimumSize:
-                              const Size(200, 50), // Specific width and height
-                        ),
-                        child: const Text(
-                          'Next',
-                          style: TextStyle(
-                            color: Colors.white, // White text color
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
