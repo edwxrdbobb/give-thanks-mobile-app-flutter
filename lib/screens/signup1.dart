@@ -27,125 +27,130 @@ class _SignUp1State extends State<SignUp1> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue, // Set background color to blue
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Center(
-                child: Image.asset('images/logo2.png'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: FormBuilder(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: TextFormField(
-                          controller: _nameController,
-                          decoration: InputDecoration(labelText: 'Name'),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your name';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: TextFormField(
-                          controller: _emailController,
-                          decoration: InputDecoration(labelText: 'Email'),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your email';
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: ListTile(
-                          title: Text('Date of Birth'),
-                          subtitle: _selectedDate != null
-                              ? Text(
-                                  '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}')
-                              : null,
-                          onTap: () async {
-                            final DateTime? pickedDate = await showDatePicker(
-                              context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime(1900),
-                              lastDate: DateTime.now(),
-                            );
-                            if (pickedDate != null) {
-                              setState(() {
-                                _selectedDate = pickedDate;
-                              });
-                            }
-                          },
-                        ),
-                      ),
-                    ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: Column(
+              children: [
+                Center(
+                  child: Image.asset(
+                    'images/logo2.png',
+                    width: 250,
                   ),
                 ),
-              ),
-          
-              SizedBox(
-                height: 70,
-              ),
-          
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  SizedBox(
-                    width: 100,
-                    height: 50,
-                    child: TextButton(
-                      onPressed: () {
-                       Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ConfirmOtp()),
-                  );
-                      },
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.orangeAccent, // Gold color
-                        minimumSize: Size(200, 50), // Specific width and height
-                      ),
-                      child: Text(
-                        'Next',
-                        style: TextStyle(
-                          color: Colors.white, // White text color
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+
+                  //The form Container that contains all the input fields
+                  child: FormBuilder(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: TextFormField(
+                            controller: _nameController,
+                            decoration: InputDecoration(labelText: 'Name'),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your name';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: TextFormField(
+                            controller: _emailController,
+                            decoration: InputDecoration(labelText: 'Email'),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: ListTile(
+                            title: Text('Date of Birth'),
+                            subtitle: _selectedDate != null
+                                ? Text(
+                                    '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}')
+                                : null,
+                            onTap: () async {
+                              final DateTime? pickedDate = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(1900),
+                                lastDate: DateTime.now(),
+                              );
+                              if (pickedDate != null) {
+                                setState(() {
+                                  _selectedDate = pickedDate;
+                                });
+                              }
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 70,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ConfirmOtp()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.orangeAccent, // Gold color
+                          minimumSize:
+                              Size(200, 50), // Specific width and height
+                        ),
+                        child: Text(
+                          'Next',
+                          style: TextStyle(
+                            color: Colors.white, // White text color
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-          
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
