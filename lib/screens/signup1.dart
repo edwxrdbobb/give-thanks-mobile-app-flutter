@@ -48,13 +48,18 @@ class _SignUp1State extends State<SignUp1> {
                     child: Column(
                       children: [
                         Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 5,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: TextFormField(
                             controller: _nameController,
-                            decoration: InputDecoration(labelText: 'Name'),
+                            decoration: const InputDecoration(
+                                hintText: "Name", border: InputBorder.none),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter your name';
@@ -63,17 +68,24 @@ class _SignUp1State extends State<SignUp1> {
                             },
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 5,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: TextFormField(
-                            controller: _emailController,
-                            decoration: InputDecoration(labelText: 'Email'),
+                            controller: _nameController,
+                            decoration: const InputDecoration(
+                              hintText: "Email",
+                              border: InputBorder.none,
+                            ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter your email';
@@ -82,16 +94,20 @@ class _SignUp1State extends State<SignUp1> {
                             },
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 5,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: ListTile(
-                            title: Text('Date of Birth'),
+                            title: const Text('Date of Birth'),
                             subtitle: _selectedDate != null
                                 ? Text(
                                     '${_selectedDate!.day}/${_selectedDate!.month}/${_selectedDate!.year}')
@@ -115,7 +131,7 @@ class _SignUp1State extends State<SignUp1> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 ),
                 Row(
@@ -135,9 +151,9 @@ class _SignUp1State extends State<SignUp1> {
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.orangeAccent, // Gold color
                           minimumSize:
-                              Size(200, 50), // Specific width and height
+                              const Size(200, 50), // Specific width and height
                         ),
-                        child: Text(
+                        child: const Text(
                           'Next',
                           style: TextStyle(
                             color: Colors.white, // White text color
