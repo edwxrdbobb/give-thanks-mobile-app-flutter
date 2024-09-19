@@ -81,7 +81,7 @@ class _SignUp1State extends State<SignUp1> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: TextFormField(
-                            controller: _nameController,
+                            controller: _emailController,
                             decoration: const InputDecoration(
                               hintText: "Email",
                               border: InputBorder.none,
