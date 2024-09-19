@@ -22,7 +22,7 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         if (timerSeconds > 0) {
           timerSeconds--;
@@ -47,16 +47,15 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
       if (code.length == 6) {
         if (code == '958273') {
           Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EnterPassword()),
-                  );
+            context,
+            MaterialPageRoute(builder: (context) => const EnterPassword()),
+          );
         } else {
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text('Wrong OTP'),
-              content: Text('Please confirm your credentials again.'),
+              title: const Text('Wrong OTP'),
+              content: const Text('Please confirm your credentials again.'),
               actions: [
                 TextButton(
                   onPressed: () {
@@ -65,7 +64,7 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                       code = '';
                     });
                   },
-                  child: Text('OK'),
+                  child: const Text('OK'),
                 ),
               ],
             ),
@@ -102,7 +101,7 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
+                      icon: const Icon(Icons.arrow_back, color: Colors.white),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -135,64 +134,67 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                       alignment: Alignment.center,
                       child: Text(
                         i < code.length ? code[i] : '',
-                        style: TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20),
                       ),
                     ),
                 ],
               ),
               const SizedBox(height: 140),
-              Center(
+              const Center(
                 child: Text(
                   'Continue',
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
               ),
               const SizedBox(height: 15),
               Center(
                 child: Text(
                   'Send code again in $timerSeconds seconds',
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
               const SizedBox(height: 5),
-              
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () => addCodeDigit('1'),
-                    child: Text('1', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('1', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('2'),
-                    child: Text('2', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('2', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('3'),
-                    child: Text('3', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('3', style: TextStyle(color: Colors.blue)),
                   ),
                 ],
               ),
@@ -202,36 +204,39 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                 children: [
                   ElevatedButton(
                     onPressed: () => addCodeDigit('4'),
-                    child: Text('4', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('4', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('5'),
-                    child: Text('5', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('5', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('6'),
-                    child: Text('6', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('6', style: TextStyle(color: Colors.blue)),
                   ),
                 ],
               ),
@@ -241,36 +246,39 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                 children: [
                   ElevatedButton(
                     onPressed: () => addCodeDigit('7'),
-                    child: Text('7', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('7', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('8'),
-                    child: Text('8', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('8', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('9'),
-                    child: Text('9', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('9', style: TextStyle(color: Colors.blue)),
                   ),
                 ],
               ),
@@ -280,36 +288,39 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                 children: [
                   ElevatedButton(
                     onPressed: () => addCodeDigit('+*#'),
-                    child: Text('#', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('#', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: () => addCodeDigit('0'),
-                    child: Text('0', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('0', style: TextStyle(color: Colors.blue)),
                   ),
                   ElevatedButton(
                     onPressed: clearCode,
-                    child: Text('X', style: TextStyle(color: Colors.blue)),
                     style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
+                      minimumSize: const Size(
+                          50, 50), // Set the minimum size for all buttons
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
+                    child:
+                        const Text('X', style: TextStyle(color: Colors.blue)),
                   ),
                 ],
               ),
