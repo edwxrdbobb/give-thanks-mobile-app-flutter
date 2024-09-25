@@ -101,7 +101,52 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 20), // Add some space below the first row
+              SizedBox(height: 20), 
+              
+             Card(
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(10),
+  ),
+  elevation: 4,
+  child: Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'Today\'s Affirmation',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          ),
+        ),
+        SizedBox(height: 10),
+        Text(
+          '"I can do all things through Christ who strengthens me." - Philippians 4:13',
+          style: TextStyle(
+            fontSize: 16,
+            fontStyle: FontStyle.italic,
+            color: Colors.black,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 20),
+        IconButton(
+          icon: Icon(Icons.mic, color: Colors.blue, size: 30),
+          onPressed: () {
+            // Handle mic button press
+          },
+        ),
+      ],
+    ),
+  ),
+),
+
+              SizedBox(
+                height: 15,
+              ),
+              // Add some space below the first row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
