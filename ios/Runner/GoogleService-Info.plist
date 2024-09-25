@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>963054380982-l2d9m6fnqb60rp6bah5q3lcsv6sud5m5.apps.googleusercontent.com</string>
+	<string>378217708332-jubuv0tar8l2q822h4udm7h85vkkc625.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.963054380982-l2d9m6fnqb60rp6bah5q3lcsv6sud5m5</string>
+	<string>com.googleusercontent.apps.378217708332-jubuv0tar8l2q822h4udm7h85vkkc625</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBizU2ZBUG2yYVdXsQ_fOjsCAWVHMkpxDY</string>
+	<string>AIzaSyAjINBvRdL43NeHUTllCAHqjpL1zJa4Dko</string>
 	<key>GCM_SENDER_ID</key>
-	<string>963054380982</string>
+	<string>378217708332</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.giveThanks</string>
+	<string>com.example.givethanks</string>
 	<key>PROJECT_ID</key>
-	<string>givethanks-c6420</string>
+	<string>givethanks-86fab</string>
 	<key>STORAGE_BUCKET</key>
-	<string>givethanks-c6420.appspot.com</string>
+	<string>givethanks-86fab.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:963054380982:ios:cdf83386b31e2239d5c317</string>
+	<string>1:378217708332:ios:051c24fe5ddb709aeb4a89</string>
 </dict>
 </plist>
