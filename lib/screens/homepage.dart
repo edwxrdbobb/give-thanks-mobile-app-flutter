@@ -101,7 +101,6 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
-<<<<<<< HEAD
               SizedBox(height: 20), 
               
              Card(
@@ -148,9 +147,6 @@ class _LandingPageState extends State<LandingPage> {
                 height: 15,
               ),
               // Add some space below the first row
-=======
-              const SizedBox(height: 20), // Add some space below the first row
->>>>>>> 0185a1e86131324b6af556d0016dbdb9cf186509
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
