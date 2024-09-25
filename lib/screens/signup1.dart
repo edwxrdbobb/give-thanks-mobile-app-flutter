@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:give_thanks/screens/otp.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp1 extends StatefulWidget {
   const SignUp1({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class SignUp1 extends StatefulWidget {
 }
 
 class _SignUp1State extends State<SignUp1> {
-  // final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   String email = '';
   String password = '';
 
@@ -29,18 +29,18 @@ class _SignUp1State extends State<SignUp1> {
   }
 
   //The google signup provider
-  // Future<void> signUpWithEmailPassword() async {
-  //   try {
-  //     UserCredential userCredential =
-  //         await _auth.createUserWithEmailAndPassword(
-  //       email: email,
-  //       password: password,
-  //     );
-  //     print("Signed up: ${userCredential.user?.email}");
-  //   } catch (e) {
-  //     print(e.toString());
-  //   }
-  // }
+  Future<void> signUpWithEmailPassword() async {
+    try {
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      print("Signed up: ${userCredential.user?.email}");
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
