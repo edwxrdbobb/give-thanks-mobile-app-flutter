@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:give_thanks/screens/otp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp1 extends StatefulWidget {
   const SignUp1({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _SignUp1State extends State<SignUp1> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   String email = '';
   String password = '';
+  String userName = '';
 
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
 
@@ -236,6 +238,9 @@ class _SignUp1State extends State<SignUp1> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: TextFormField(
+                            onChanged: (value) {
+                              userName = value;
+                            },
                             controller: _nameController,
                             decoration: const InputDecoration(
                                 hintText: "Name", border: InputBorder.none),
@@ -260,6 +265,9 @@ class _SignUp1State extends State<SignUp1> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: TextFormField(
+                            onChanged: (value) {
+                              email = value;
+                            },
                             controller: _emailController,
                             decoration: const InputDecoration(
                               hintText: "Email",

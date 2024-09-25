@@ -25,9 +25,21 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-<<<<<<< HEAD
-  final Color goldColor = Color.fromRGBO(255, 215, 0, 1.0);
-=======
+
+    //The google signup provider
+  // Future<void> signUpWithEmailPassword() async {
+  //   try {
+  //     UserCredential userCredential =
+  //         await _auth.createUserWithEmailAndPassword(
+  //       email: email,
+  //       password: password,
+  //     );
+  //     print("Signed up: ${userCredential.user?.email}");
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
+  
   Color goldColor =
       const Color.fromRGBO(255, 215, 0, 1.0); // RGB values for gold color
 >>>>>>> 0185a1e86131324b6af556d0016dbdb9cf186509

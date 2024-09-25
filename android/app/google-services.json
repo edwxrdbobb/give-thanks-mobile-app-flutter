@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "378217708332",
+    "project_id": "givethanks-86fab",
+    "storage_bucket": "givethanks-86fab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378217708332:android:f75657f1088c8deaeb4a89",
+        "android_client_info": {
+          "package_name": "com.example.givethanks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378217708332-5et5kr7srj4hfsg04gnl5pl2hmghm9ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwZaZzBiZdNcqF-LTIHs4Zb4lH5GzZtxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378217708332-5et5kr7srj4hfsg04gnl5pl2hmghm9ku.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "378217708332-jubuv0tar8l2q822h4udm7h85vkkc625.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.givethanks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
