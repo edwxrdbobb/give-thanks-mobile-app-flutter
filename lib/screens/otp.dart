@@ -1,320 +1,178 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:give_thanks/screens/pass.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
 class ConfirmOtp extends StatefulWidget {
-  const ConfirmOtp({Key? key}) : super(key: key);
+  const ConfirmOtp({super.key});
 
   @override
   State<ConfirmOtp> createState() => _ConfirmOtpState();
 }
 
 class _ConfirmOtpState extends State<ConfirmOtp> {
-  String code = '';
-  int timerSeconds = 20;
-  late Timer timer;
-
-  @override
-  void initState() {
-    super.initState();
-    startTimer();
-  }
-
-  void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        if (timerSeconds > 0) {
-          timerSeconds--;
-        } else {
-          timer.cancel();
-        }
-      });
-    });
-  }
+  //
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
 
   @override
   void dispose() {
-    timer.cancel();
+    email.dispose();
+    password.dispose();
     super.dispose();
-  }
-
-  void addCodeDigit(String digit) {
-    if (code.length < 6) {
-      setState(() {
-        code += digit;
-      });
-      if (code.length == 6) {
-        if (code == '958273') {
-          Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EnterPassword()),
-                  );
-        } else {
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text('Wrong OTP'),
-              content: Text('Please confirm your credentials again.'),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    setState(() {
-                      code = '';
-                    });
-                  },
-                  child: Text('OK'),
-                ),
-              ],
-            ),
-          );
-        }
-      }
-    }
-  }
-
-  void clearCode() {
-    if (code.isNotEmpty) {
-      setState(() {
-        code = code.substring(0, code.length - 1);
-      });
-    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //Header of the auths
+            Container(
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  const Text(
+                    "Verification",
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 30, top: 30),
+                    child: Image.asset("assets/fp.jpg"),
+                  ),
+                ],
               ),
-              const SizedBox(height: 70),
-              const Text(
-                'Enter code',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 35),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            ),
+
+            // the login imput form field
+            FormBuilder(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Column(
                 children: [
-                  for (int i = 0; i < 6; i++)
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white, width: 2),
-                        borderRadius: BorderRadius.circular(10),
-                        color: i < code.length ? Colors.amber : Colors.white,
+                  const Text(
+                    "Enter the verification code sent to your number",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                  //OTP
+                  OtpTextField(
+                    numberOfFields: 5,
+                    borderColor: Color(0xFF512DA8),
+                    //set to true to show as box or false to show as dash
+                    showFieldAsBox: true,
+                    //runs when a code is typed in
+                    onCodeChanged: (String code) {
+                      //handle validation or checks here
+                    },
+                    //runs when every textfield is filled
+                    onSubmit: (String verificationCode) {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: const Text("Verification Code"),
+                              content:
+                                  Text('Code entered is $verificationCode'),
+                            );
+                          });
+                    }, // end onSubmit
+                  ),
+
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                  //verify button
+                  CupertinoButton(
+                    onPressed: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) =>
+                      //             const ChangePasswordPage()));
+                    },
+                    color: const Color.fromRGBO(29, 69, 135, 1),
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: const Center(
+                        child: Text("verify"),
                       ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        i < code.length ? code[i] : '',
-                        style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  const Text("OR"),
+
+                  const SizedBox(
+                    height: 10,
+                  ),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        child: Image.asset("assets/googleicon.jpg"),
                       ),
-                    ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      GestureDetector(
+                        child: Image.asset("assets/facebookicon.jpg"),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(
+                    height: 40,
+                  ),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Remember the password?",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const SignUpPage()));
+                        },
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700, fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
-              const SizedBox(height: 140),
-              Center(
-                child: Text(
-                  'Continue',
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-              ),
-              const SizedBox(height: 15),
-              Center(
-                child: Text(
-                  'Send code again in $timerSeconds seconds',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const SizedBox(height: 5),
-              
-              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('1'),
-                    child: Text('1', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('2'),
-                    child: Text('2', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('3'),
-                    child: Text('3', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('4'),
-                    child: Text('4', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('5'),
-                    child: Text('5', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('6'),
-                    child: Text('6', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('7'),
-                    child: Text('7', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('8'),
-                    child: Text('8', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('9'),
-                    child: Text('9', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('+*#'),
-                    child: Text('#', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => addCodeDigit('0'),
-                    child: Text('0', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: clearCode,
-                    child: Text('X', style: TextStyle(color: Colors.blue)),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize:
-                          Size(50, 50), // Set the minimum size for all buttons
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ))
+          ],
         ),
       ),
     );
