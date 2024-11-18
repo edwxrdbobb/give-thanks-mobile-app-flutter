@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:give_thanks/screens/comm.dart';
-import 'package:give_thanks/screens/shomepage.dart';
 
 class TodaysAffirmation extends StatefulWidget {
   const TodaysAffirmation({super.key});
@@ -23,7 +21,7 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -42,13 +40,13 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                      side: BorderSide(
+                      side: const BorderSide(
                           color: Color.fromARGB(
                               255, 207, 216, 248)), // Blue border
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Sports Affirmation',
                       style: TextStyle(
                         color: Colors.black,
@@ -56,17 +54,17 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 13,
                   ),
                   TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 207, 216, 248),
+                      backgroundColor: const Color.fromARGB(255, 207, 216, 248),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Today\'s Affirmations',
                       style: TextStyle(
                         color: Colors.black,
@@ -78,9 +76,9 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
               ),
             ),
               
-              SizedBox(height: 5), // Add some space below the buttons
+              const SizedBox(height: 5), // Add some space below the buttons
               Card(
-                color: Color.fromARGB(255, 207, 216,
+                color: const Color.fromARGB(255, 207, 216,
                     248), // Background color of the second button
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -89,7 +87,7 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 radius: 25,
@@ -124,12 +122,12 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                               Container(
                          
                           
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Colors.amber,
                             borderRadius: BorderRadius.circular(28), // Border radius
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.star,
@@ -151,8 +149,8 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                       ),
                       
                       
-                              SizedBox(height: 10), // Space between items
-                              Row(
+                              const SizedBox(height: 10), // Space between items
+                              const Row(
                                 children: [
                                   Icon(
                                     Icons.favorite,
@@ -173,8 +171,8 @@ class _TodaysAffirmationState extends State<TodaysAffirmation> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20), // Add some space below the main row
-Row(
+                      const SizedBox(height: 20), // Add some space below the main row
+const Row(
   children: [
     Text(
       'Gratitude is spontaneous',
@@ -185,14 +183,14 @@ Row(
     ),
   ],
 ),
-SizedBox(height: 8),
+const SizedBox(height: 8),
 Row(
   children: [
     Expanded(
       child: LinearProgressIndicator(
         value: 0.6, // Example value, should be dynamically updated
         backgroundColor: Colors.grey[300],
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+        valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
       ),
     ),
   ],
@@ -201,48 +199,48 @@ Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
     IconButton(
-      icon: Icon(Icons.play_arrow),
+      icon: const Icon(Icons.play_arrow),
       onPressed: () {
         // Handle play button press
       },
     ),
-    Text('0:30'), // Example duration, should be dynamically updated
+    const Text('0:30'), // Example duration, should be dynamically updated
   ],
 ),
-SizedBox(height: 10),
+const SizedBox(height: 10),
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
   children: [
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 208, 252,253),
+        color: const Color.fromARGB(255, 208, 252,253),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 1',
         style: TextStyle(color: Colors.blue),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 76, 47,168),
+        color: const Color.fromARGB(255, 76, 47,168),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 2',
         style: TextStyle(color: Color.fromARGB(255, 205, 103,149)),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black54),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
+      child: const Row(
         children: [
           Icon(Icons.mic),
           SizedBox(width: 5),
@@ -251,8 +249,8 @@ Row(
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
-      child: Icon(Icons.share, color: Colors.blue),
+      padding: const EdgeInsets.all(10),
+      child: const Icon(Icons.share, color: Colors.blue),
     ),
   ],
 ),
@@ -263,9 +261,9 @@ Row(
                   
                 ),
               ),
-              SizedBox(height: 20), // Add some space below the buttons
+              const SizedBox(height: 20), // Add some space below the buttons
               Card(
-                color: Color.fromARGB(255, 207, 216,
+                color: const Color.fromARGB(255, 207, 216,
                     248), // Background color of the second button
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -274,7 +272,7 @@ Row(
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 radius: 25,
@@ -309,12 +307,12 @@ Row(
                               Container(
                          
                           
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Colors.amber,
                             borderRadius: BorderRadius.circular(28), // Border radius
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.star,
@@ -336,8 +334,8 @@ Row(
                       ),
                       
                       
-                              SizedBox(height: 10), // Space between items
-                              Row(
+                              const SizedBox(height: 10), // Space between items
+                              const Row(
                                 children: [
                                   Icon(
                                     Icons.favorite,
@@ -358,8 +356,8 @@ Row(
                           ),
                         ],
                       ),
-                      SizedBox(height: 20), // Add some space below the main row
-Row(
+                      const SizedBox(height: 20), // Add some space below the main row
+const Row(
   children: [
     Text(
       'Gratitude is spontaneous',
@@ -370,14 +368,14 @@ Row(
     ),
   ],
 ),
-SizedBox(height: 8),
+const SizedBox(height: 8),
 Row(
   children: [
     Expanded(
       child: LinearProgressIndicator(
         value: 0.6, // Example value, should be dynamically updated
         backgroundColor: Colors.grey[300],
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+        valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
       ),
     ),
   ],
@@ -386,48 +384,48 @@ Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
     IconButton(
-      icon: Icon(Icons.play_arrow),
+      icon: const Icon(Icons.play_arrow),
       onPressed: () {
         // Handle play button press
       },
     ),
-    Text('0:30'), // Example duration, should be dynamically updated
+    const Text('0:30'), // Example duration, should be dynamically updated
   ],
 ),
-SizedBox(height: 10),
+const SizedBox(height: 10),
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
   children: [
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 208, 252,253),
+        color: const Color.fromARGB(255, 208, 252,253),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 1',
         style: TextStyle(color: Colors.blue),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 76, 47,168),
+        color: const Color.fromARGB(255, 76, 47,168),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 2',
         style: TextStyle(color: Color.fromARGB(255, 205, 103,149)),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black54),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
+      child: const Row(
         children: [
           Icon(Icons.mic),
           SizedBox(width: 5),
@@ -436,8 +434,8 @@ Row(
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
-      child: Icon(Icons.share, color: Colors.blue),
+      padding: const EdgeInsets.all(10),
+      child: const Icon(Icons.share, color: Colors.blue),
     ),
   ],
 ),
@@ -448,9 +446,9 @@ Row(
                   
                 ),
               ),
-              SizedBox(height: 20), // Add some space below the buttons
+              const SizedBox(height: 20), // Add some space below the buttons
               Card(
-                color: Color.fromARGB(255, 207, 216,
+                color: const Color.fromARGB(255, 207, 216,
                     248), // Background color of the second button
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -459,7 +457,7 @@ Row(
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 radius: 25,
@@ -494,12 +492,12 @@ Row(
                               Container(
                          
                           
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Colors.amber,
                             borderRadius: BorderRadius.circular(28), // Border radius
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.star,
@@ -521,8 +519,8 @@ Row(
                       ),
                       
                       
-                              SizedBox(height: 10), // Space between items
-                              Row(
+                              const SizedBox(height: 10), // Space between items
+                              const Row(
                                 children: [
                                   Icon(
                                     Icons.favorite,
@@ -543,8 +541,8 @@ Row(
                           ),
                         ],
                       ),
-                      SizedBox(height: 20), // Add some space below the main row
-Row(
+                      const SizedBox(height: 20), // Add some space below the main row
+const Row(
   children: [
     Text(
       'Gratitude is spontaneous',
@@ -555,14 +553,14 @@ Row(
     ),
   ],
 ),
-SizedBox(height: 8),
+const SizedBox(height: 8),
 Row(
   children: [
     Expanded(
       child: LinearProgressIndicator(
         value: 0.6, // Example value, should be dynamically updated
         backgroundColor: Colors.grey[300],
-        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+        valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
       ),
     ),
   ],
@@ -571,48 +569,48 @@ Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
     IconButton(
-      icon: Icon(Icons.play_arrow),
+      icon: const Icon(Icons.play_arrow),
       onPressed: () {
         // Handle play button press
       },
     ),
-    Text('0:30'), // Example duration, should be dynamically updated
+    const Text('0:30'), // Example duration, should be dynamically updated
   ],
 ),
-SizedBox(height: 10),
+const SizedBox(height: 10),
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
   children: [
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 208, 252,253),
+        color: const Color.fromARGB(255, 208, 252,253),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 1',
         style: TextStyle(color: Colors.blue),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 76, 47,168),
+        color: const Color.fromARGB(255, 76, 47,168),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Text(
+      child: const Text(
         'Container 2',
         style: TextStyle(color: Color.fromARGB(255, 205, 103,149)),
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.black54),
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
+      child: const Row(
         children: [
           Icon(Icons.mic),
           SizedBox(width: 5),
@@ -621,8 +619,8 @@ Row(
       ),
     ),
     Container(
-      padding: EdgeInsets.all(10),
-      child: Icon(Icons.share, color: Colors.blue),
+      padding: const EdgeInsets.all(10),
+      child: const Icon(Icons.share, color: Colors.blue),
     ),
   ],
 ),
@@ -642,7 +640,7 @@ Row(
   selectedItemColor: Colors.blue,
   unselectedItemColor: Colors.black,
   onTap: _onItemTapped,
-  items: [
+  items: const [
     BottomNavigationBarItem(
       icon: CircleAvatar(
         radius: 15,

@@ -33,7 +33,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
                   height: 200,
                   fit: BoxFit.cover,
                 ),
-                Positioned(
+                const Positioned(
                   top: 150,
                   left: 20,
                   child: Text(
@@ -47,8 +47,8 @@ class _ViewCommunityState extends State<ViewCommunity> {
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Icon(Icons.lock, size: 16),
@@ -73,8 +73,8 @@ class _ViewCommunityState extends State<ViewCommunity> {
                     children: List.generate(
                       7,
                       (index) => Container(
-                        margin: EdgeInsets.only(right: 4),
-                        child: CircleAvatar(
+                        margin: const EdgeInsets.only(right: 4),
+                        child: const CircleAvatar(
                           backgroundImage: AssetImage(
                               'assets/member.png'), // Add member image asset here
                           radius: 16,
@@ -82,8 +82,8 @@ class _ViewCommunityState extends State<ViewCommunity> {
                       ),
                     ),
                   ),
-                  Spacer(),
-                  Row(
+                  const Spacer(),
+                  const Row(
                     children: [
                       Chip(
                         label: Text('Faith'),
@@ -106,12 +106,12 @@ class _ViewCommunityState extends State<ViewCommunity> {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  minimumSize: Size(500, 60), // Specify width and height
+                  minimumSize: const Size(500, 60), // Specify width and height
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Join Group',
                   style: TextStyle(
                     color: Colors.white,
@@ -134,13 +134,13 @@ class _ViewCommunityState extends State<ViewCommunity> {
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                      side: BorderSide(
+                      side: const BorderSide(
                           color: Color.fromARGB(
                               255, 207, 216, 248)), // Blue border
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Todays Affirmations',
                       style: TextStyle(
                         color: Colors.black,
@@ -148,7 +148,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 13,
                   ),
                   TextButton(
@@ -159,11 +159,11 @@ class _ViewCommunityState extends State<ViewCommunity> {
                     );
                     },
                     style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 207, 216, 248),
+                      backgroundColor: const Color.fromARGB(255, 207, 216, 248),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'All Affirmations',
                       style: TextStyle(
                         color: Colors.black,
@@ -178,7 +178,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Card(
-                color: Color.fromARGB(255, 207, 216, 248),
+                color: const Color.fromARGB(255, 207, 216, 248),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -187,13 +187,13 @@ class _ViewCommunityState extends State<ViewCommunity> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'For God so love the world that he gave his only begotten son',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Row(
                         children: [
                           Expanded(
@@ -202,7 +202,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
                                   0.6, // Example value, should be dynamically updated
                               backgroundColor: Colors.grey[300],
                               valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  const AlwaysStoppedAnimation<Color>(Colors.blue),
                             ),
                           ),
                         ],
@@ -211,27 +211,27 @@ class _ViewCommunityState extends State<ViewCommunity> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.play_arrow),
+                            icon: const Icon(Icons.play_arrow),
                             onPressed: () {
                               // Handle play button press
                             },
                           ),
-                          Text(
+                          const Text(
                               '0:30'), // Example duration, should be dynamically updated
                         ],
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.pink,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Affirmation',
                               style: TextStyle(
                                 color: Colors.white,
@@ -239,13 +239,13 @@ class _ViewCommunityState extends State<ViewCommunity> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.orange,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.star, color: Colors.white),
                                 SizedBox(width: 4),
@@ -259,14 +259,14 @@ class _ViewCommunityState extends State<ViewCommunity> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.mic, color: Colors.blue),
                                 SizedBox(width: 4),
@@ -294,7 +294,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
   selectedItemColor: Colors.blue,
   unselectedItemColor: Colors.black,
   onTap: _onItemTapped,
-  items: [
+  items: const [
     BottomNavigationBarItem(
       icon: CircleAvatar(
         radius: 15,
@@ -327,7 +327,7 @@ class _ViewCommunityState extends State<ViewCommunity> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: ViewCommunity(),
   ));
 }

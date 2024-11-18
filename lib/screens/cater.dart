@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:give_thanks/screens/lang.dart';
-import 'package:give_thanks/screens/noti.dart';
 
 class ChooseCategory extends StatefulWidget {
   const ChooseCategory({super.key});
@@ -22,8 +20,8 @@ class _ChooseCategoryState extends State<ChooseCategory> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 50), // Add space at the top
-              Text(
+              const SizedBox(height: 50), // Add space at the top
+              const Text(
                 'Choose Interest',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -31,15 +29,15 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                   fontSize: 24,
                 ),
               ),
-              SizedBox(height: 6),
-              Text(
+              const SizedBox(height: 6),
+              const Text(
                 'Select some topics you like to help personalize or improve your growth in. by findings people for you to follow.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              SizedBox(height: 50), // Reduce height between text and buttons
+              const SizedBox(height: 50), // Reduce height between text and buttons
               SizedBox(
                 height: 50,
                 child: Row(
@@ -76,7 +74,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -111,7 +109,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               SizedBox(
                 height: 50,
                 child: Row(
@@ -148,7 +146,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -183,7 +181,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                   ],
                 ),
               ),
-               SizedBox(height: 10),
+               const SizedBox(height: 10),
               SizedBox(
                 height: 50,
                 child: Row(
@@ -220,7 +218,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: InkWell(
                         onTap: () {
@@ -255,7 +253,7 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                   ],
                 ),
               ),
-              SizedBox(height: 220),
+              const SizedBox(height: 220),
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -269,17 +267,16 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SendNotifications()),
+                      MaterialPageRoute(builder: (context) => const NextScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'Next',
                     style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
                SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -294,10 +291,10 @@ class _ChooseCategoryState extends State<ChooseCategory> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SendNotifications()),
+                          builder: (context) => const NextScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'Skip',
                     style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                   ),
@@ -306,6 +303,22 @@ class _ChooseCategoryState extends State<ChooseCategory> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class NextScreen extends StatelessWidget {
+  const NextScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Next Screen'),
+      ),
+      body: const Center(
+        child: Text('This is the Next Screen'),
       ),
     );
   }

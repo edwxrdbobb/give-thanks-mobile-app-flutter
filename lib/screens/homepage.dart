@@ -101,7 +101,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ],
               ),
-              SizedBox(height: 20), 
+              const SizedBox(height: 20), 
               
              Card(
   shape: RoundedRectangleBorder(
@@ -113,7 +113,7 @@ class _LandingPageState extends State<LandingPage> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
+        const Text(
           'Today\'s Affirmation',
           style: TextStyle(
             fontSize: 20,
@@ -121,8 +121,8 @@ class _LandingPageState extends State<LandingPage> {
             color: Colors.blue,
           ),
         ),
-        SizedBox(height: 10),
-        Text(
+        const SizedBox(height: 10),
+        const Text(
           '"I can do all things through Christ who strengthens me." - Philippians 4:13',
           style: TextStyle(
             fontSize: 16,
@@ -131,9 +131,9 @@ class _LandingPageState extends State<LandingPage> {
           ),
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         IconButton(
-          icon: Icon(Icons.mic, color: Colors.blue, size: 30),
+          icon: const Icon(Icons.mic, color: Colors.blue, size: 30),
           onPressed: () {
             // Handle mic button press
           },
@@ -143,7 +143,7 @@ class _LandingPageState extends State<LandingPage> {
   ),
 ),
 
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               // Add some space below the first row
@@ -167,7 +167,7 @@ class _LandingPageState extends State<LandingPage> {
                           MaterialPageRoute(
                               builder: (context) => const SecondLandingPage()),
                         );
-                      },
+                      }, 
                       child: const Text(
                         'Explore',
                         style: TextStyle(

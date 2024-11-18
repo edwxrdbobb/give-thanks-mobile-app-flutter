@@ -1,24 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:give_thanks/screens/load.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:give_thanks/screens/loading.dart';
+import 'package:give_thanks/screens/Onboard.dart';
+import 'package:give_thanks/screens/auth/CreateAccount.dart';
+import 'package:give_thanks/screens/auth/VerifyAccount.dart';
+import 'package:give_thanks/screens/auth/Username.dart';
+import 'package:give_thanks/screens/auth/Login.dart';
+import 'package:give_thanks/screens/auth/Language.dart';
+import 'package:give_thanks/screens/auth/Notification.dart';
+import 'package:give_thanks/screens/auth/Contacts.dart';
+import 'package:give_thanks/screens/auth/Interest.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: LoadingPage(),
+      title: 'Give Thanks',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoadingPage(),
+        '/onboarding': (context) => const OnboardingScreen(),
+        '/create-account': (context) => const CreateAccountScreen(),
+        '/verification': (context) => const VerificationScreen(),
+        '/set-username': (context) => const SetUsernameScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/contacts': (context) => const ContactsScreen(),
+        '/interests': (context) => const InterestScreen(),
+        '/notification': (context) => const NotificationsScreen(),
+        '/languages': (context) => const LanguageScreen(),
+      },
     );
   }
 }

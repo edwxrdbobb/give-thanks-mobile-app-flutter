@@ -22,7 +22,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(13),
+          padding: const EdgeInsets.all(13),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -31,7 +31,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // First sub-row with Circular Avatar and Hello Joseph text
-                  Row(
+                  const Row(
                     children: [
                       CircleAvatar(
                         radius: 25,
@@ -51,13 +51,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   // Second sub-row with Icon, Text and Notifications Bar
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.star, // replace with your desired icon
                         color: Colors.amber,
                         size: 30,
                       ),
-                      SizedBox(width: 5),
-                      Text(
+                      const SizedBox(width: 5),
+                      const Text(
                         '258',
                         style: TextStyle(
                           fontSize: 18,
@@ -65,26 +65,26 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                           color: Colors.amber,
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Stack(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.notifications,
                             size: 30,
                           ),
                           Positioned(
                             right: 0,
                             child: Container(
-                              padding: EdgeInsets.all(1),
+                              padding: const EdgeInsets.all(1),
                               decoration: BoxDecoration(
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              constraints: BoxConstraints(
+                              constraints: const BoxConstraints(
                                 minWidth: 12,
                                 minHeight: 12,
                               ),
-                              child: Text(
+                              child: const Text(
                                 '5', // replace with dynamic value as needed
                                 style: TextStyle(
                                   color: Colors.white,
@@ -100,7 +100,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Card(
                 color: Colors.blue,
                 shape: RoundedRectangleBorder(
@@ -110,7 +110,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
@@ -131,7 +131,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 130), // Space between text and image
+                      const SizedBox(width: 130), // Space between text and image
                       Container(
                         width: 90, // Specify the width of the image
                         height: 70, // Specify the height of the image
@@ -151,7 +151,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   ),
                 ),
               ),
-              SizedBox(height: 7,), 
+              const SizedBox(height: 7,), 
               Padding(
               padding: const EdgeInsets.all(16.0),
               child: Row(
@@ -166,13 +166,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                      side: BorderSide(
+                      side: const BorderSide(
                           color: Color.fromARGB(
                               255, 207, 216, 248)), // Blue border
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Todays',
                       style: TextStyle(
                         color: Colors.black,
@@ -180,7 +180,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 13,),
+                  const SizedBox(width: 13,),
                    TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -190,13 +190,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                      side: BorderSide(
+                      side: const BorderSide(
                           color: Color.fromARGB(
                               255, 207, 216, 248)), // Blue border
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Categories',
                       style: TextStyle(
                         color: Colors.black,
@@ -204,17 +204,17 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 13,
                   ),
                   TextButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 207, 216, 248),
+                      backgroundColor: const Color.fromARGB(255, 207, 216, 248),
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     ),
-                    child: Text(
+                    child: const Text(
                       'All  Affirmations',
                       style: TextStyle(
                         color: Colors.black,
@@ -225,11 +225,11 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                 ],
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Card(
-                color: Color.fromARGB(255, 207, 216, 248),
+                color: const Color.fromARGB(255, 207, 216, 248),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -238,13 +238,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'For God so love the world that he gave his only begotten son',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Row(
                         children: [
                           Expanded(
@@ -253,7 +253,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                                   0.6, // Example value, should be dynamically updated
                               backgroundColor: Colors.grey[300],
                               valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  const AlwaysStoppedAnimation<Color>(Colors.blue),
                             ),
                           ),
                         ],
@@ -262,27 +262,27 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.play_arrow),
+                            icon: const Icon(Icons.play_arrow),
                             onPressed: () {
                               // Handle play button press
                             },
                           ),
-                          Text(
+                          const Text(
                               '0:30'), // Example duration, should be dynamically updated
                         ],
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.pink,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Affirmation',
                               style: TextStyle(
                                 color: Colors.white,
@@ -290,13 +290,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.orange,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.star, color: Colors.white),
                                 SizedBox(width: 4),
@@ -310,14 +310,14 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.mic, color: Colors.blue),
                                 SizedBox(width: 4),
@@ -337,11 +337,11 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Card(
-                color: Color.fromARGB(255, 207, 216, 248),
+                color: const Color.fromARGB(255, 207, 216, 248),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -350,13 +350,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'For God so love the world that he gave his only begotten son',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Row(
                         children: [
                           Expanded(
@@ -365,7 +365,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                                   0.6, // Example value, should be dynamically updated
                               backgroundColor: Colors.grey[300],
                               valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  const AlwaysStoppedAnimation<Color>(Colors.blue),
                             ),
                           ),
                         ],
@@ -374,27 +374,27 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.play_arrow),
+                            icon: const Icon(Icons.play_arrow),
                             onPressed: () {
                               // Handle play button press
                             },
                           ),
-                          Text(
+                          const Text(
                               '0:30'), // Example duration, should be dynamically updated
                         ],
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.pink,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Affirmation',
                               style: TextStyle(
                                 color: Colors.white,
@@ -402,13 +402,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.orange,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.star, color: Colors.white),
                                 SizedBox(width: 4),
@@ -422,14 +422,14 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.mic, color: Colors.blue),
                                 SizedBox(width: 4),
@@ -449,11 +449,11 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                 ),
               ),
             ),
-            SizedBox(height: 5,),
+            const SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Card(
-                color: Color.fromARGB(255, 207, 216, 248),
+                color: const Color.fromARGB(255, 207, 216, 248),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -462,13 +462,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'For God so love the world that he gave his only begotten son',
                         style: TextStyle(
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Row(
                         children: [
                           Expanded(
@@ -477,7 +477,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                                   0.6, // Example value, should be dynamically updated
                               backgroundColor: Colors.grey[300],
                               valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.blue),
+                                  const AlwaysStoppedAnimation<Color>(Colors.blue),
                             ),
                           ),
                         ],
@@ -486,27 +486,27 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.play_arrow),
+                            icon: const Icon(Icons.play_arrow),
                             onPressed: () {
                               // Handle play button press
                             },
                           ),
-                          Text(
+                          const Text(
                               '0:30'), // Example duration, should be dynamically updated
                         ],
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.pink,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Text(
+                            child: const Text(
                               'Affirmation',
                               style: TextStyle(
                                 color: Colors.white,
@@ -514,13 +514,13 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.orange,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.star, color: Colors.white),
                                 SizedBox(width: 4),
@@ -534,14 +534,14 @@ class _AllAffirmationsState extends State<AllAffirmations> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
+                            child: const Row(
                               children: [
                                 Icon(Icons.mic, color: Colors.blue),
                                 SizedBox(width: 4),
@@ -570,7 +570,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
   selectedItemColor: Colors.blue,
   unselectedItemColor: Colors.black,
   onTap: _onItemTapped,
-  items: [
+  items: const [
     BottomNavigationBarItem(
       icon: CircleAvatar(
         radius: 15,
@@ -603,7 +603,7 @@ class _AllAffirmationsState extends State<AllAffirmations> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: AllAffirmations(),
   ));
 }
