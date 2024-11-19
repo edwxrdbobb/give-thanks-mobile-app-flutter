@@ -49,7 +49,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              
+
               // Main Content
               Column(
                 children: [
@@ -71,7 +71,7 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 40),
-                  
+
                   // Google Sign In Button
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -102,9 +102,9 @@ class OnboardingScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 16),
-                  
+
                   // Create Account Button
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -125,9 +125,9 @@ class OnboardingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 16),
-                  
+
                   // Explore Button
                   TextButton(
                     style: TextButton.styleFrom(
@@ -138,7 +138,7 @@ class OnboardingScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      // TODO: Implement explore
+                      Navigator.pushNamed(context, '/main');
                     },
                     child: const Text(
                       'Explore Give Thanks',
@@ -150,7 +150,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              
+
               // Footer
               Column(
                 children: [

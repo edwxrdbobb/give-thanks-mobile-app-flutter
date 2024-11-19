@@ -9,6 +9,7 @@ import 'package:give_thanks/screens/auth/Language.dart';
 import 'package:give_thanks/screens/auth/Notification.dart';
 import 'package:give_thanks/screens/auth/Contacts.dart';
 import 'package:give_thanks/screens/auth/Interest.dart';
+import 'package:give_thanks/screens/main/Main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/interests': (context) => const InterestScreen(),
         '/notification': (context) => const NotificationsScreen(),
         '/languages': (context) => const LanguageScreen(),
+        '/main': (context) => const MainScreen(), // New route for the main screen with bottom navigation
       },
     );
   }
